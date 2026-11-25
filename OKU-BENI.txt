@@ -1,0 +1,381 @@
+DEEPDARK ARENA ONLINE — Netlify'a yükleme
+
+1) https://app.netlify.com/drop adresini aç (Netlify hesabı gerekir, ücretsiz).
+2) Bu klasörü (veya zip dosyasını) sayfadaki kutuya sürükle-bırak.
+3) Netlify sana bir adres verir (ör. https://xxxx.netlify.app). Aynı adresi iki cihazda aç.
+
+OYNAMA
+- Host (telefon ya da PC): Menü > "Oda Kur". Ekranda 5 harfli oda kodu çıkar.
+- Arkadaş: Menü > "Katıl" > kodu yaz > Bağlan.
+- Kısa kod çalışmazsa "Yedek yöntem" ile kod değiş tokuşu yapılır (ikisi de çalışır).
+- Modlar: Co-op Klasik ve Co-op Boss. Ayarlar (bot sayısı, harita vb.) menüden yapılır, host'ta geçerlidir.
+
+NOT
+- Sunucu yok: oyun host'un cihazında çalışır, arkadaş ona WebRTC ile bağlanır. Host'un sekmesi kapanırsa oda kapanır.
+- Kısa kod, PeerJS'in ücretsiz bulut servisini kullanır (unpkg'den yüklenir). Erişilemezse yedek yöntem devreye girer.
+
+--- HİKAYE MODU (100 BÖLÜM + 1 GİZLİ) ---
+- Oyunun tamamı artık İngilizce.
+- 1-50 arası bölümler baştan tasarlandı: her bölümün kendine özgü haritası (spiral, halka, çatallı yollar, salon zinciri, adalar, köprüler, sokak/patika ağı, yan cepler) ve yeni zemin/duvar görünümleri, dekorlar, ortam efektleri (yaprak, kum fırtınası, kar, kor, spor, karanlık bölümler).
+- Dalga kapısı düzeltildi: artık kenarından veya köşeden geçilemiyor.
+- Dünyalar: Forest 1-10, Desert 11-20, Ice 21-30, Volcano 31-40, Swamp 41-50,
+  Lost Temple 51-60, Iron Works 61-70, Fallen City 71-80, Downtown Ruins 81-90, Deep Space 91-100.
+  100. bölümü bitirince gizli "Final Challenge" (101) açılır (daha zor, 5 mini boss).
+- Boss'lar her 5. bölümde (1-50) ve 60, 70, 80, 90, 100'de: Stone Colossus, The Grinder, Siege Walker,
+  Warlord Gunship, The Mothership (son boss, 3 evre).
+- Yeni mini boss'lar: Stone Guardian, Shredder, Rocket Truck, Drone Carrier, Void Warden. 55/65/75/85/95 mini boss parkurları.
+  Eski mini boss'ların canı da artırıldı.
+- Yeni düşmanlar: Buzzsaw (önünde testere, yakından vurur — özellikle 61-70), Drone, Crawler (yaklaşıp patlar),
+  Mech Walker (önden zırhlı, arkasından vur), Turret (bina/kenar üstünde sabit taret), Saucer (kalkanı açılıp kapanır),
+  Void Blob (ölünce ikiye bölünür).
+- Yeni tuzaklar: diken, alev/lazer çiti, hareketli testere, konveyör bant, pres, yanan enkaz, yerçekimi kuyusu.
+- Olaylar: şehirde hava saldırısı, uzayda meteor yağmuru (yere düşmeden önce daire ile gösterilir).
+- Can paketi (kırmızı artı) ve tamir kiti (anahtar: hasarları siler) bölümlerin içinde.
+- Hedef oku: ekranın kenarında sarı ok bir sonraki dalgayı, kırmızı ok kalan düşmanı, yeşil ok çıkışı gösterir.
+- Şehir bölümleri (72, 77, 81, 82, 87, 88, 89) açık sokak ağı: birden fazla yol var, her sokakta düşman var.
+- Gelişim: XP artık yavaş. Seviye sınırı bölüm bölüm artar; 100. seviyeye ancak 50. bölümde ulaşılır, sonrası 100'de devam eder.
+  Yüksek seviyede tanklar yavaşlamaz.
+- Her bölüm başında ve öldükten sonra Basic tank ile başlarsın ve seviyene kadar sınıfları tek tek seçersin
+  (turuncu "↺" butonu son kullandığın sınıfa direkt geçirir).
+- Zorluk: Easy / Normal / Hard / Advanced / Nightmare.
+- İki kişide düşmanlar ~%25 fazla, boss/mini boss canı ~1.7 kat.
+- Dalga kilidi, kontrol noktaları, 3 can, diriltme ve mermi üçgeni aynen devam ediyor.
+- Eski arena seviyeleri menüde "Arena (free)" bölümünde.
+
+--- SON GÜNCELLEME ---
+- İzleyici modu: canların bitince takım arkadaşın diriltene kadar onu izlersin.
+- Story'de tanklar biraz daha hızlı.
+- Bölümler kısaltıldı (ortalama ~5 dk hedeflendi; her 10 bölümde bir "uzun" bölüm var).
+- Haritalar daha doğal: geniş açıklıklar, kenarda siper kayaları, yol kenarına kadar uzanan bitki/taş/kar dokusu;
+  ince kenar çizgisi (pist görüntüsü azaltıldı).
+- Düşman yoğunluğu bölüme göre değişiyor: bazı bölümlerde az ama güçlü, bazılarında çok ama zayıf düşman.
+  Genel düşman hasarı/canı hafif düşürüldü.
+- 15 ana boss'un hepsi 3 evreli: %66 ve %33 canda kükreme + şok dalgası, evreye özel imza saldırısı
+  (spiral, nova halkaları, dönen lazer kolları, haç şeklinde patlamalar, meteor yağmuru).
+  Arena değişir: 2. evrede tavandan kaya düşer (siper/engel olur), 3. evrede arena kenarı çöker ve yanar.
+  Hareketli boss'lar oyuncuya doğru atılma (dash) yapar; evreye göre renkli aura, vurulma parlaması.
+- 40 NEW TANKS (155 player classes in total):
+  Seeker → Tracker → Heatseeker → Swarmlord → Hivemind → Singularity (Homing shots)
+  Ricochet → Pinball → Carom → Rebound King (Bouncing shots)
+  Cluster → Shrapnel → Fragstorm → Starburst → Nova Bomb → Big Crunch (Cluster bombs)
+  Ripple → Tidal → Serpent → Leviathan → Tsunami (Wave shots)
+  Surge → Jolt → Thunderbolt → Zeus → Olympus (Accelerating shots)
+  Boomer → Glaive → Chakram → Cyclone → Tempest Blade (Boomerang blades)
+  Drill → Auger → Bore → Tunneler → Core Breaker (Piercing drills)
+  Trapper → Minefield → Jailer → Bastille (Mines)
+  Enemy tanks sometimes use these classes too.
+- Yeni düşmanlar: Field Medic (yakındaki düşmanları iyileştirir — önce onu vur), Stalker (görünmez yaklaşır,
+  vurunca görünür olur), Drone Hive (drone üretir), Lobber (uzaktan havan atar, yere daire düşer), Golden Tank (kaçar; vurursan büyük XP).
+- Yeni olaylar: Supply Drop (paraşütlü kutu, yeşil alanda durursan can dolar), Earthquake, Golden Tank, Ambush (arkadan baskın).
+- Hikaye: her dünyanın başında dünya kartı ve hikaye cümlesi, her bölüm başında bölüm adı; gizli bölümde sürpriz.
+
+--- BÜYÜK GÜNCELLEME: YENİ HARİTALAR, YAN GÖREVLER, BOSS SAVAŞLARI ---
+HARİTALAR (1-100 baştan kuruldu)
+- Her bölüm artık odalar + koridorlardan oluşuyor: geniş açıklıklar, ağaçlık/sütunlu salonlar, ikiz odalar,
+  ortası kayalı/lavlı/bataklıklı odalar, kanyon geçitleri, nehir ve köprü geçişleri.
+- 9 farklı bölüm tipi (Open, Canyon, Grove, River, Maze, Halls, Ponds, Twin, Epic) ve 8 farklı yerleşim deseni
+  (yılan, sarmal, merdiven, U, rastgele yürüyüş...) dünyaya göre karıştırılıyor; aynı dünyadaki 10 bölüm birbirine benzemez.
+- Ana yoldan ayrılan YAN ODALAR (ödül, karakol, kurtarma) ve her bölümde 1-2 GİZLİ ALAN var.
+  Gizli alanlar duvar gibi görünür; duvardaki çatlak izlerine doğru sürersen açılır ("Secret area discovered!").
+- Gizli alanlarda EASTER EGG'ler var: Legendary Duck, kardan adam, güneş gözlüklü kaktüs, altın tank heykeli,
+  tank mezarlığı, arcade makinesi, pasta, düşmüş UFO... Kaç tane bulduğun kaydedilir.
+YAN GÖREVLER (85 bölümde)
+- Collect (3 parça topla: Map Fragment, Scrap Part, Data Core, Rune Stone, Star Shard...)
+- Destroy the enemy outposts (yan odalardaki karakolları temizle)
+- Rescue the stranded ally (SOS bayraklı müttefik tankı bul)
+- Find the hidden relic (gizli alandaki eseri bul)
+- Görev yazısı ekranın üstünde küçük görünür. Ödül: Repair Kit / Shield Cell + XP.
+EŞYALAR
+- 🔧 Repair Kit: canın %50'sini doldurur ve TÜM yara/hasar efektlerini anında siler.  (Tuş: R)
+- 🛡 Shield Cell: 5 saniye hasar almazsın.  (Tuş: E)
+- Telefonda sağdaki iki yuvarlak butondan kullanılır. En fazla 5'er tane taşınır. Co-op'ta herkesin kendi çantası var.
+- Kitler: yan görevler, gizli alanlar, kırmızı kutular ve her boss ödülü (+1 Repair Kit herkese).
+BOSS'LAR
+- Daha hızlı (hareket ~%40 daha hızlı), daha çok can, sürekli saldırı, düzenli dash, arenaya sürekli kaya düşer;
+  boss dash atarken kayaları parçalar. Geç dünyalarda boss'lar daha çılgın (saldırı sıklığı artar).
+- Seviye 40, 50, 60, 70, 80, 90 boss'larında: Phase 2 = SURVIVE! Boss kaybolur, 30 saniye boyunca arena saldırır
+  (meteor, dönen lazerler, halka dalgaları, bomba halısı, minyonlar). Süre dolunca boss geri iner → Phase 3 → Final Phase.
+- Seviye 100 Mothership: en uzun savaş — 60 saniyelik SURVIVE + 25 saniyelik ikinci SURVIVE + Final Phase.
+
+--- 110 SEVİYE GÜNCELLEMESİ ---
+DÜNYA SIRASI (eski kayıtlar otomatik taşınır)
+  1-10 Forest · 11-20 Desert · 21-30 Ice · 31-40 Volcano · 41-50 Swamp · 51-60 Lost Temple
+  61-70 RETRO ARCADE (YENİ) · 71-80 Iron Works · 81-90 Fallen City · 91-100 Downtown · 101-110 Deep Space · 111 gizli
+RETRO ARCADE
+- Renk değiştiren neon piksel zemin, yanıp sönen yıldızlar, neon oda kenarları, akan şerit çizgileri,
+  uçuşan pikseller, hafif CRT tarama çizgileri; piksel ağaçlar, coin'ler, neon küpler, dev piksel kalp.
+- Retro dünyasında düşman mermileri piksel kare olarak görünür.
+- Boss 65: Glitch Core — ışınlanır (glitch), piksel halkaları, dönen tarama lazerleri, satranç tahtası bombaları, klon drone'lar.
+- Boss 70: Mega Invader — arenada sağa sola süzülür, mermi yağmuru, aşağı lazer, invader filosu indirir, dalış + barikat blokları.
+SURVIVE EVRESİ artık sadece: Seviye 50 (30 sn), 80 (30 sn), 100 (40 sn) ve FİNAL 110 Mothership (60 sn + 25 sn).
+TEMA TANKLARI (sadece Story) — temayı bitirince açılır (o dünyanın 10. bölümü), Lv 20'den itibaren seçilir:
+  Forest  : Sprout → Bramble → Thornwall/Vinelash → Ancient Oak → World Tree      (yaprak dikeni: düşmanı yavaşlatır)
+  Desert  : Dust Devil → Sandspout → Haboob → Sirocco → Sand King → Pharaoh        (burgu kum hortumu, delici)
+  Ice     : Icicle → Frostbite → Glacier → Blizzard → Absolute Zero               (dondurur + buz kırıkları)
+  Volcano : Ember → Cinder → Lava Flow → Eruption → Pyroclast                     (yere lav birikintisi bırakır)
+  Swamp   : Spitter → Bile → Plaguecaster → Blightlord → Rot Hydra                (zehir, üst üste biner)
+  Temple  : Acolyte → Runecaster → Oracle → High Priest → Sun God → The Eternal   (rünler tankın etrafında döner, sonra hedefe atılır)
+  Retro 1 : Bit Blaster → Pixel Pusher → 8-Bit → 16-Bit → Megabyte → Gigabyte → Terabyte(Lv100)  (8-bit adım adım ilerleyen piksel mermi)
+  Retro 2 : Neon Bolt → Laser Line → Synthwave/Arcade Ace → High Score → Outrun → Game Over        (neon lazer, çok hızlı, delici)
+  Iron    : Cog → Sprocket → Millstone → Buzz King → Shredmaster → Foundry Titan  (testere, düşmandan düşmana seker)
+  City    : Torch → Scorcher → Firestarter → Hellfire → Inferno King              (alev püskürtücü + yanma)
+  Downtown: Bottle Rocket → Missileer → Bazooka/Swarm Rocket → Warhead → ICBM → Doomsday   (hızlanan roket, alan hasarı)
+  Downtown: Sparker → Tesla Coil → Stormcaller → Arc Lord → Tempest Core → Overcharge       (zincirleme yıldırım)
+  Space   : Photon → Plasma Cutter → Nebula → Quasar → Pulsar → Starforge → Supernova Prime(Lv100) (plazma lazer)
+  Space   : Rift → Vortex → Event Horizon → Wormhole → Black Star → Void Lord → Oblivion(Lv100)    (düşmanları çeken kara delik)
+  Her tema tankının namlusu tema renginde, gövdesinde küçük tema süsü var. O dünyanın bölümlerinde düşmanlar
+  bazen bu tankları kullanır (önceden görürsün).
+LV 100 APEX TANKLARI (her modda): Multiverse, Planet Crusher, God's Eye, Armageddon, Omnistorm, Universe, Paradox, Genesis.
+HARİTA ÇEVRESİ: her dünyada yolların dışına büyük simge objeler eklendi (dev ağaçlar, mesalar, buz sarkıtları, lav gölleri,
+  ölü ağaçlar, kırık sütunlar, borular, hurda arabalar, heliport, kraterler, piksel kalp/arcade makineleri).
+
+--- HARİTA / SEVİYE / KADEME GÜNCELLEMESİ ---
+HARİTALAR (1-110 yeniden çizildi)
+- Artık koridor/oda yok: her bölüm kıvrılan GENİŞ bir arazi. Kenarlarda düzensiz koylar ve açıklıklar,
+  ortalarda içinden geçilemeyen TEPELER/ADACIKLAR (üstlerinde dev ağaç, mesa, buz sarkıtı, lav, arcade vs.),
+  göller, harabe duvarları, kayalar. Yol kenarına, koylara ve yan ceplere gidebilirsin.
+- 9 arazi tipi: Field, Canyon, Lakes, Ruins, Isles, Serpent, Plateau, Zigzag, River — her dünyada farklı sırayla.
+- Mermiler tepelerin içinden geçemez (siper olarak kullan).
+RETRO = SYNTHWAVE
+- Arka planda dev gün batımı güneşi (çizgili), mor-pembe gökyüzü, ufka doğru akan neon ızgara,
+  parlayan/yanıp sönen neon kareler, yıldızlar. Zemin neon ızgara, kenarlar gökkuşağı renginde akar.
+- Retro tankların namluları pembe→camgöbeği synthwave gradyanlı ve parlıyor; Mega Invader neon pembe-mor.
+SEVİYE İLERLEMESİ
+- Artık bölüm başında 100 olmuyorsun: seviye sınırı yavaş yavaş artar, 100'e ancak ~80. bölümde ulaşılır;
+  her bölüme kendi sınırının ~18 altından başlarsın.
+TANK KADEMELERİ
+- Kademe seviyeleri: 10 · 20 · 30 · 40 · 50 · 60 · 70 · 80 (· 100 özel).
+- Hatların çoğu artık Lv 80'e kadar gelişir (Mk II → Mk III → Prime → Omega), her kademe gerçekten güçlenir
+  (+%7 hasar/kademe, daha kalın namlu, Prime'da arka namlu, Omega'da yan namlular).
+- Bazı klasik hatlar bilerek kısa kalır (Lv 30-40'ta FINAL TANK).
+- Lv 100 özel tankları: Planet Crusher, Armageddon, Paradox, Genesis, God's Eye, Terabyte, Supernova Prime, Oblivion.
+TUŞLAR: Repair Kit = Q (telefonda sağdaki 🔧 butonu), Shield Cell = E (🛡 butonu).
+
+--- HYPERCORE + ÜST KATMAN DETAYLARI ---
+HYPERCORE (Seviye 105 boss'u, ayrıca Deep Space bölümlerinde mini boss olarak çıkabilir)
+- Ok ucu şeklinde zırhlı savaş gemisi. Ortasında parlayan ÇEKİRDEK var, önünde 3 turuncu KALKAN plakası.
+- Kalkanlar dururken çekirdek neredeyse hasar almaz: önce plakaları tek tek kır ("Hypercore shields down — hit the CORE!").
+- Saldırılar: 4'lü paralel lazer voleleri (kanattaki 4 namludan, ateşlemeden önce namlular sarı parlar),
+  yana kayarak art arda 4'lü lazer, açılı voleler, kalkanlar kırılınca 3 yöne 4'lü lazer + çekirdek halkası + güdümlü mermi.
+- Uçuş efektleri: titreyen motor alevleri, yana yatma (banking), hızlı kayışta iz kıvılcımları, havada süzülme.
+ÜST KATMAN DETAYLARI (altından geçilir, altındayken şeffaflaşır)
+- Forest: dev ağaç tepeleri ve sarmaşık perdeleri · Desert: çizgili gölgelik ve kaya kemerleri
+- Ice: karlı çam tepeleri ve buz kemerleri · Volcano: süzülen duman bulutları · Swamp: söğüt dalları ve sis
+- Temple: taş kemerler ve çiçekli çardaklar · Retro: neon HI-SCORE hologramı ve gökkuşağı kemeri
+- Iron Works: boru demetleri ve iskele yolları · Fallen City: çökmüş beton levhalar ve yırtık tenteler
+- Downtown: üst geçit köprüsü ve reklam panoları · Deep Space: istasyon kirişleri ve güneş panelleri
+
+--- YENİ DÜŞMANLAR, KALKANLI TANKLAR, BOSS DETAYLARI ---
+TEMA DÜŞMANLARI (Forest hariç her dünyada, bazen dalgalarda çıkar)
+  Desert  : Sand Scarab   — kumun altında (hasar almaz) sana doğru kayar, çıkınca halka mermi atar; yüzeydeyken vur
+  Ice     : Snow Roller   — sana yuvarlanırken büyür ve hızlanır, çarparsa patlar + yavaşlatır; uzaktan vur
+  Volcano : Magma Imp     — zikzak koşar, arkasında yanan iz bırakır, ateş topu atar
+  Swamp   : Bog Toad      — zıplar (indiği yerde şok dalgası), 5'li tükürük atar
+  Temple  : Stone Sentry  — önü zırhlı (önden %25 hasar), dönen ışın atar; arkasından/yanından vur
+  Retro   : Glitch Sprite — ışınlanır, + ve x şeklinde piksel mermi atar
+  Iron    : Welder Bot    — yaklaşınca kaynak alevi püskürtür, sonra hızla atılır
+  City    : Scavenger     — çizgiyle nişan alır, kancayla seni kendine çeker; çizgiden çekil
+  Downtown: Spotter Drone — uzaktan lazer nişangâhı (ince çizgi) sonra çok hızlı tek atış
+  Space   : Void Wisp     — arada bir hayalete dönüşür (hasar almaz), güdümlü küreler atar
+KALKANLI TANK HATTI (her modda):
+  Aegis(10) → Buckler(20) → Paladin(30) → Templar(40) → Vanguard(50) → Aegis Lord(60) → Immortal(70) → Invincible(80)
+  Paladin'den dal: Reflector(40) → Mirror Knight(50) → Prism Guard(60) → Prime(70) → Omega(80) — kalkan mermilerin bir kısmını geri yansıtır
+  Önde enerji kalkanı (kademe arttıkça genişler ve güçlenir) önden gelen mermileri emer. Kalkan kırılırsa
+  bir süre kapalı kalır, 3 sn vurulmazsan dolar. Mermileri bilerek zayıf. Yandan/arkadan vurulursa korumasız.
+BOSS'LAR: hepsine ortak detay katmanı — etrafında dünyaya göre parlayan parçacıklar, yenilmezken altıgen kalkan,
+  hasar aldıkça gövdede çatlaklar, duman, son evrede alevler. Hypercore'a zırh çizgileri, perçinler,
+  füze kapsülleri, yanıp sönen seyir ışıkları, sensör kubbesi, ısı menfezleri ve daha büyük motorlar eklendi.
+
+--- CO-OP GÖRSEL SENKRON + DENGE ---
+- Arkadaşın (client) artık şunları da görür: buz/yavaşlatma halkası, zehir ve yanma kabarcıkları, zincirleme yıldırım çizgileri,
+  Sand Scarab'ın kum altına girmesi, Void Wisp'in hayalete dönmesi, kalkanlı tankların gerçek kalkan doluluğu.
+- Denge (hiçbir şey kaçılamaz değil):
+  · Oyuncuya etki eden yavaşlatmalar hafifletildi ve kısaltıldı; zehir/yanma oyuncuda üst üste binmez, yarı hasar.
+  · Kara delik (Void) çekimi oyuncuda çok zayıf, düşmanlarda da azaltıldı; patlama alanı ve süre küçültüldü.
+  · Roket, tesla zinciri, lav birikintisi hasarı biraz düşürüldü.
+  · Bog Toad zıplarken İNECEĞİ YER önceden işaretlenir. Scavenger kancası daha dar açıda tutar, daha zayıf ve kısa çeker.
+  · Spotter Drone atışı biraz yavaş ve zayıf (lazer nişangâhı görünce kenara çekil).
+  · Boss SURVIVE evrelerinde saldırılar daha seyrek gelir (üst üste binmez).
+
+--- BOSS ÖLÜMLERİ ---
+Her boss'un kendine özel ölüm sahnesi var (ana boss'lar ~3.5 sn, mini boss'lar 2.5 sn; co-op'ta arkadaşın da aynısını görür):
+ Firefly Queen: titreyip ateşböceği sürüsüne dağılır · Giant Spider: bacaklarını toplar, ağ telleri kopar, yeşil sıçrar
+ Desert Scorpion: kuyruğunu savurur, kabuğu çatlayıp parçalanır · Sand Worm: halkaları sırayla patlayıp kuma gömülür
+ Ice Queen: buz kristaline hapsolur ve tuzla buz olur · Glacier Mammoth: devrilir, yere çarpınca şok dalgası ve toz
+ Magma boss: aşırı ısınıp beyaz parlar, lav püskürür · Phoenix: alevler içinde döner, küle döner, bir kıvılcım yükselir
+ Toxic Bloom: yaprakları dönerek dökülür, spor bulutu yayılır · Lord of Darkness: kara deliğe çöker, mor şok dalgası
+ Stone Colossus: içinden ışık çatlakları yayılır, kayalara ayrılıp dağılır · The Grinder: dişliler fırlar, kıvılcım fışkırır
+ Siege Walker: bacakları sırayla patlar, duman sütunu · Gunship: kontrolden çıkıp döner, dumanla düşüp patlar
+ Glitch Core: RGB bölünmesi, piksel dağılması, "ERROR" · Mega Invader: piksel piksel dağılır, "+10000"
+ Hypercore: çekirdek aşırı yüklenir, zincirleme patlamalar, dev camgöbeği nova
+ The Mothership: gövde boyunca zincirleme patlamalar, ışık hüzmeleri, ekranı kaplayan beyaz flaş
+ Mini boss'lar: kıvılcım, duman ve hurda parçalarıyla patlama
+
+--- GELİŞTİRİCİ ODASI (DEV ROOM) ---
+- Açmak: bilgisayarda herhangi bir yerde A1RNDP yaz, ya da sol alttaki küçük 🔑 butonuna basıp kodu gir.
+  Açılınca sol altta 🛠 butonu çıkar (menüde ve oyun içinde), bir kere açınca bu cihazda açık kalır (🔒 Lock ile kapatılır).
+- STORY: 1-111 arası istediğin bölüme kilitsiz atla (boss bölümleri ☠ ve kırmızı çerçeveli), 🧪 DEV SANDBOX ROOM (neon test arenası).
+- BU BÖLÜMDE: Restart, Önceki/Sonraki, Bölümü kazan, Çıkışa ışınlan, Boss arenasına ışınlan, Gizli alanı aç,
+  Dalgayı temizle, Hepsini öldür, Dalga 1..N'ye ve Kontrol noktası 1..N'ye ışınlan.
+- OYUNCU: God mode, Tek vuruş (One-shot), Full can, 5 Repair Kit + 5 Shield Cell, seviye 1-100, oyundaki HER sınıfı seç
+  (★ tema tankları ve 🛡 kalkanlılar dahil).
+- SPAWN: her normal tank tipi, tüm özel/tema düşmanları, tüm mini boss'lar (önüne doğar).
+- BOSS: canı %75/50/25/5 yap, SURVIVE evresini başlat, öldür (ölüm animasyonunu test et).
+- EVENTLER: Supply drop, Golden tank, Deprem, Pusu, Meteor.
+- DEBUG: hitbox ve tetikleyiciler (dalga çemberleri, kapı çizgileri, kontrol noktaları, boss parçaları), FPS sayacı.
+- KAYIT: her şeyi aç, ilerlemeyi sıfırla. (Co-op'ta araçlar sadece host'ta çalışır.)
+HARİTALARA YENİ: kırmızı PATLAYAN VARİLLER (vurunca patlar, yakındaki düşmanlara büyük hasar, zincirleme patlar —
+  sen de yakınındaysan hasar alırsın) ve tahta SANDIKLAR (kırınca +%15 can ve XP).
+BOSS SÜRELERİ: geç dünyalarda boss'lar daha uzun dayanır (Glitch Core, Mega Invader, Hypercore özellikle uzatıldı).
+
+--- BOSS CAN BARLARI + MENÜ ANİMASYONU ---
+- Taç emojisi kaldırıldı; boss barında sadece ismi ve altında kısa unvanı yazar (ör. "Queen of the Glowing Woods").
+- Her boss'un kendi renklerinde can barı var ve oyun ilerledikçe barlar havalılaşır:
+  Seviye 5-25: sade renkli çerçeve · 30-45: üzerinden geçen parlama · 50-80: parlayan çerçeve + uçlarda elmaslar
+  · 90-110 ve Hypercore: akan enerji dolgusu, gradyan çerçeve.
+- Barda evre çizgileri (%66 ve %33), yeni yenen hasarı gösteren beyaz iz, sağ üstte PHASE 1 / PHASE 2 / FINAL / SURVIVE,
+  can %20'nin altına inince bar nabız gibi atar, boss hasar almazken soluklaşır. Mini boss'larda sade küçük bar.
+- Ana menü: arkada yavaşça kayan ızgara, süzülen ışık parçacıkları ve ekranda süzülüp ateş eden soluk tank siluetleri.
+
+--- GERÇEK FİNAL: THE ARCHITECT (Seviye 111, gizli) ---
+- 110'u bitirince açılan son bölüm artık bir boss bölümü. Yolda zor dalgalar: daha kalabalık düşmanlar, taretler,
+  çift mini boss (Warden + Hypercore) ve üçlü mini boss dalgası (Guardian + Shredder + Rocket Truck).
+- THE ARCHITECT: Mothership'i yaratan dev uçan dretnot (oyundaki en büyük boss), devasa 1750'lik arenada.
+  Gövde zırhlıdır; sadece o evrenin parçaları (sarı dönen nişangâhla işaretli) hasar alır. Parçaları tek tek yok et:
+   1/6 Wing Cannons     — iki kanat topu: ağır yavaş mermiler + yelpaze taramaları         · Arena: holografik ızgara
+   2/6 Missile Swarm    — 4 füze kapsülü: güdümlü füze yağmuru + bomba halısı               · Arena: ASTEROID FIELD (kayalar)
+   3/6 Shield Generators— 2 jeneratör: dönen lazer kolları, drone filosu, halka dalgaları    · Arena: GRAVITY STORM (iki çekim kuyusu)
+   4/6 Annihilator Beam — burundaki dev lazer: şarj olur (geniş nişan çizgisi), sonra tarayan ışın · Arena: THE RING BURNS (kenar yanar)
+   5/6 Engines          — iki motor: gemi arenada hızla dalış yapar, arkasında yanan iz, şok dalgası · Arena: PURSUIT (kızıl yarıklar)
+   6/6 THE CORE         — 20 sn CORE OVERLOAD (çekirdek kapalı, mermi fırtınası) sonra çekirdek açılır · Arena: EVENT HORIZON (merkezde kara delik)
+- Her evre geçişinde gemi parlar, arena tamamen değişir, eski saldırılar biter. Can barı 6 parçalı, "PHASE n/6".
+- Ölüm: 6 saniyelik zincirleme patlama, gövdeden fışkıran ışık hüzmeleri, ekranı kaplayan beyaz flaş.
+- Tahmini süre (tek oyuncu): ~10 dakika — oyundaki en uzun savaş.
+
+--- MÜZİK ---
+- 60 şarkı "music" klasöründe. Zip'i/klasörü olduğu gibi Netlify'a yükle (music klasörü index.html'in yanında kalmalı).
+- Her bölüm kendi şarkısını çalar (dosya adındaki numaralara göre, ör. forest4.5 = Forest 4 ve 5).
+  Boss şarkısı o dünyanın iki boss bölümünde de çalar. Deep Space: 105 = deepspaceboss1, 110 = deepspaceboss2.
+  111: yolda level111, The Architect savaşında level111boss. Serbest Arena bölümlerine de şarkılar dağıtıldı.
+- Şarkılar işlendi: baştaki boşluk/yavaş açılış ve sondaki sönme/sessizlik kesildi (level111'in sonundaki 5 sn dahil),
+  hepsi aynı ses seviyesine getirildi, boyut 249 MB'tan ~100 MB'a indi.
+  20-30 dakikalık uzun parçalar (Forest, Volcano 8-9-10, Ironworks 1-2-3 vb.) tek tur halinde kesildi; oyunda kesintisiz döngü yapar.
+- Şarkı bitince boşluk olmadan yumuşak geçişle başa döner. Aynı şarkıyı paylaşan bölümler arasında şarkı kesilmeden devam eder.
+- Boss odasına girince: bölüm müziği söner, ekran sinematik moda geçer (siyah bantlar + boss adı),
+  boss ~1.8 sn sonra müziğiyle başlar (boss 2.5 sn sonra saldırmaya başlar).
+- Boss tamamen patlayıp yok olunca boss müziği yavaşça (fade) kapanır.
+- Menü açılınca / oyun durunca / sekme arka plana geçince müzik durur, dönünce KALDIĞI YERDEN devam eder.
+  Sonuç ekranında müzik söner. Hikaye dışındaki modlarda müzik çalmaz.
+- Ayarlar: Menü > ayarlar kısmında "🎵 Music" (aç/kapa) ve "Music volume" kaydırıcısı. Ses efektlerinden bağımsızdır.
+- Co-op: müzik ağ üzerinden gitmez; her oyuncu şarkıyı kendi cihazında Netlify'dan indirir (bölüm başına ~1-3 MB,
+  bir kez inen şarkı tarayıcıda önbelleğe alınır). Boss ve sonraki bölüm şarkısı önceden yüklenir, geç başlama olmaz.
+
+--- GÜNCELLEME: DENGE + DÜZELTMELER ---
+- Başlangıçta düşmanın dibinde doğma hatası düzeltildi (15 bölümde ilk dalga doğma noktasında tetikleniyordu).
+- Dalgalar artık gruplar halinde gelir (en fazla ~4 düşman), ardından "Reinforcements!" ile sıradaki grup.
+  Toplam dalga sayısı ve bölüm uzunluğu arttı, aynı anda ekrandaki düşman sayısı azaldı.
+- Düşman gücü bölüm ilerledikçe kademeli düşürüldü (son bölümlerde hasar ~3 kat az, ateş hızı sınırlandı).
+- Boss'lar: canları ve vuruş güçleri özellikle son dünyalarda azaltıldı; mini boss'ların canı da biraz düştü.
+- The Architect'in drone'ları zayıflatıldı (daha az, daha düşük seviye).
+- Hikayede tanklar yüksek seviyede daha hızlı (Lv 100'de ~%25 daha hızlı) ve biraz daha dayanıklı.
+- Temalı tanklar: bitirdiğin dünyaların tankları sınıf seçme ekranında "★ Theme tanks" düğmesiyle her zaman çıkar
+  (hangi dalda olursan ol). DEV odasında "THEME TANKS" bölümünde hepsi tek tıkla seçilebilir.
+- Deep Space: harita dışındaki yıldızlar katmanlı olarak kayar ve parıldar, bulutsu arka plan; zemin yeni gemi
+  güvertesi kaplaması; daire daire görünen halkalar kaldırıldı.
+- Retro: bölüm içi zemin koyulaştırıldı, tank artık rahat görünür (dış synthwave arka plan aynı).
+- Müzik: bölüm başında hemen başlar. Seçili bölümün şarkısı menüdeyken, boss ve sonraki bölüm şarkısı oyun
+  sırasında önceden indirilir. Telefonda dokunma kilidi her dokunuşta yeniden denenir (gecikmeli başlama hatası).
+
+--- GÜNCELLEME 3 ---
+- Işınlanma/duvarda sıkışma: tank yürünebilir alanın dışına itilirse (her boss'ta) ~0.3 sn içinde en son güvenli
+  noktaya geri alınır, kısa bir kalkan verilir. Bozuk konum/hız değerleri de otomatik düzeltilir.
+- Boss çubuklarında "PHASE 1/2" vb. yazılar kaldırıldı; sadece çubuktaki evre çizgileri duruyor.
+- Klavye (PC): E = Med Kit (can), Q = Repair Kit, F = Shield Cell, H = arkadaşından yardım iste (SOS).
+  Shift + E/Q/F = eşyayı ARKADAŞINA kullan. Telefonda: 👥 düğmesi açıkken eşyalar arkadaşına gider, 🆘 = yardım çağır.
+- Med Kit: %60 can verir. Arkadaşın ölmüşse ona Med Kit basarak anında diriltebilirsin.
+  Med Kit'ler 97 bölümde var; bir kısmı gizli yollarda. Herkes 1 Med Kit ile başlar (en fazla 5).
+- Yardımlaşma: Shield Cell yakındaki arkadaşa da 3 sn kalkan verir (Shield link). İkiniz aynı düşmanı vurunca
+  %12 ekstra hasar (Team focus). SOS ile arkadaşının ekranında senin yönünü gösteren kırmızı ok çıkar.
+- Tanklar biraz daha hızlı.
+- Tema tankları:
+  * İlk kademeleri artık birbirinden farklı (namlu düzenleri) ve her dünyanın kendi namlu tasarımı var
+    (orman sarmaşık+yaprak, çöl geniş ağız, buz kristal uç, volkan lav çatlakları, bataklık balon uç, tapınak altın
+    halkalar, demir dişli, şehir alev ağzı, roket kanatları, tesla bobini, uzay plazma halkaları / girdap ucu, retro piksel).
+  * Mermileri düşmana çarpınca DÜŞÜK ihtimalle temasına özel etki yapar (YAKMA, DONDURMA, ZEHİR, KÖK SALMA,
+    KUM FIRTINASI, RUN İŞARETİ, GLITCH, ZİNCİR ŞİMŞEK, PARÇALAMA, PLAZMA, VOID...). Kademe ve seviye yükseldikçe
+    ihtimal ve güç biraz artar. Boss'lara da nadiren ekstra hasar olarak işler.
+  * Dallar uzadı: bazıları Lv 80'e, bazıları Lv 90'a, bazıları Lv 95'e kadar gidiyor (Pix/Plasma/Void: Lv 100 apex).
+  * "Next class" yazısı artık doğru seviyeyi gösterir (önceden Lv 100'lük tank için yanlışlıkla Lv 80 yazıyordu).
+- Sesler: normal tankların atış sesi seviye arttıkça kalınlaşır/sertleşir; her tema tankının kendine özel sesi var.
+- YENİ: Flamethrower dalı (Volkan, hikaye): alev püskürtür, yakın mesafede yakar, gelen düşman mermilerini yakıp
+  yok eder; çabuk ısınır, ısınınca 3-4 sn namludan duman çıkar ve ateş edemezsin.
+- YENİ: Ion Beam dalı (Sniper'dan, her modda): ateş tuşunu basılı tuttuğun sürece mavi lazer ışını; hasarı düşük
+  ama sürekli, seviyeyle artar; sadece çok küçük mermileri yok eder.
+- YENİ: DOUBLE LASER (Lv 100, Klasik modlar): 111. bölümü bitirince açılır. İki namludan sırayla anlık, delip geçen
+  dev lazer; bekleme süresi uzun, hasarı çok yüksek.
+- Retro neon silahlarında FPS iyileştirildi.
+
+--- GÜNCELLEME 4: CO-OP DÜZELTMELERİ ---
+- Sürüm kontrolü: iki cihazda farklı oyun sürümü varsa (ör. telefonda eski sayfa açık kalmışsa) bağlanınca
+  "Game versions do not match" uyarısı çıkar; "Refresh now" ile ikisi de yenilenir. Yeni sürüm yükleyince
+  her iki cihazda da sayfayı yenileyin (gerekirse sekmeyi kapatıp açın).
+- Çökme koruması: oyun içinde bir hata olursa oyun artık donmaz/gri ekranda kalmaz; hata yakalanır, oyun
+  devam eder ve ekranda kısa bir "⚠ Error caught" mesajı çıkar (çıkarsa ekran görüntüsünü at, hemen düzeltirim).
+- Arkadaşın ekranında harita kurulamamışsa oyun haritayı kendisi yeniden kurar.
+
+--- GÜNCELLEME 5 ---
+- Sıkışma kurtarma: yürümeye çalıştığın halde 15 sn yerinden kıpırdayamazsan (10. sn'de uyarı çıkar) checkpointe,
+  checkpoint yoksa başlangıca ışınlanırsın. Boss arenasında ise arenada boss'tan uzak güvenli bir noktaya.
+- Boss'larda düşen kayalar kaldırıldı: artık kaçılabilen meteor düşer, arkasında engel bırakmaz. Boss savaşı başlayınca
+  arenanın içindeki kayalar da kalkar, boss'a her yerden vurabilirsin. (Tüm boss'larda.)
+- Ice Queen (25): kırmızı bombadan önce seni yavaşlatan buz ağı kaldırıldı, bomba uyarı süresi uzadı.
+  Örümcek ağlarının yavaşlatması da azaltıldı.
+- Boss'un yanında gelen tanklar: aynı anda en fazla 3 tane, hasarları ~%45, canları %40 azaltıldı, daha yavaş ateş ederler.
+- Hikaye: ilk açılışta 25. bölüme kadar açık gelir (ilerlemen varsa ona dokunulmaz).
+
+--- GÜNCELLEME 6: KAYIT SİSTEMİ ---
+- Bölüm bitince ilerleme artık İKİ cihaza da kaydedilir (önceden sadece odayı kuranın cihazına yazılıyordu).
+- Bağlanınca ilerleme PAYLAŞILMAZ: herkesin ilerlemesi kendi oynadığı bölümlerdir. Birlikte bitirdiğiniz bölüm ikinize de yazılır.
+- Kayıt iki ayrı yere yazılır (biri bozulursa diğerinden okunur), sayfa kapanırken / arka plana geçerken de kaydedilir,
+  ilerleme asla geriye gitmez (sadece DEV odasındaki Reset ile sıfırlanır).
+- Bu sürüm hikayeyi ilk açılışta 27. bölüme kadar açık getirir.
+
+--- GÜNCELLEME 7: BOSS'LAR + SINIF SEÇİMİ ---
+- Boss savaşında düşman tank gelmez; sadece faz değişince 1 (iki kişiyseniz 2) zayıf tank gelir. (Survive fazları hariç.)
+- Faz değişiminde artık lazer yok: boss kalkanlanır, kükrer, hasar vermeyen bir şok dalgası çıkar, yakındaki mermiler silinir.
+- Her boss'un kendi hareketi var: bazıları ağır ve yavaş (Magma, Bloom, Golem, Walker, Mammoth), bazıları hızlı
+  (Firefly küçük sıçramalar yapar); Scorpion/Mammoth/Grinder uyarı çizgisiyle hücum eder, Overlord/Glitch ışınlanır,
+  Golem/Walker yere vurur, Invader/Gunship yana kayar. Eski "herkes aynı atılma hareketi" kaldırıldı.
+- Her boss'un kendine özel iki ekstra saldırısı var (yelpaze, mayınlar, boşluklu mermi duvarı, güdümlü küreler,
+  deprem halkaları, lazer sütunları, spiral, nova...). Ortak saldırı havuzu kaldırıldı.
+- Boss canları azaltıldı; 40. bölüm Phoenix küllerinden %50 yerine %28 canla doğar, dönen ışınları daha yavaş ve zayıf.
+- Sınıf seçimi: seviyen birkaç kademe atlamaya yetiyorsa önce dalı seçersin (Twin ▸ 7 gibi, sayı = seçenek),
+  sonra o dalda seviyenin yettiği EN GÜÇLÜ tankları doğrudan seçersin. 7-8 kez tank seçmek gerekmez.
+
+--- GÜNCELLEME 8 ---
+- 111. boss (ve tüm boss'lar): arenada duvarın dibine ışınlanma düzeltildi. Sebep: yoldan arenaya giren hayatta bir
+  düşman yüzünden önceki dalganın "kapısı" aktif kalıyor, kapıdan uzaklaşınca oyun seni kapıya geri çekiyordu.
+  Arena kilitlenince artık hiçbir dalga kapısı geçerli değil.
+- Dalga düşmanları artık oyuncunun dibinde doğmaz (en az ~450 px uzakta) ve doğduktan sonra ~1 sn ateş etmez.
+- Flamethrower güçlendirildi: menzil daha uzun ve kademeyle artar (~180 px → ~350 px), ısınma artık süreye bağlı:
+  kesintisiz 5.5 sn (ilk kademe) – 9 sn (son kademe) ateş edebilirsin; soğuma daha hızlı.
+- Boss tasarımları daha sert/agresif: Phoenix (bıçak tüylü ateş kuşu), Firefly Queen (zırhlı eşek arısı kraliçe),
+  Toxic Bloom (dikenli, dişli yamyam bitki), Glacier Mammoth (buz zırhlı dev), Stone Colossus (erimiş çekirdekli
+  çatlak dev), Ice Queen (kristal taçlı buz kraliçesi).
+- Sıkışma kurtarma boss arenasında 25 sn (normalde 15 sn).
+- Boss'u yenince "Next level" ekranı hemen gelmez: önce boss'un ölüm/patlama animasyonu tamamen biter, ardından
+  ~1.2 sn sonra sonuç ekranı açılır.
+
+--- GÜNCELLEME 9: ANA BOSS BÖLÜMLERİ ---
+- 10, 20, 30, ... 110. bölümler (dünyanın son boss'u) artık daha uzun: yol neredeyse 2 kat uzun, 6-8 dalga.
+  Ara boss bölümlerine (5, 15, 25, 35...) dokunulmadı.
+- Boss arenasına girmeden hemen önce ikmal noktası: 2 Med Kit + 2 Repair Kit + checkpoint.
+  Checkpoint'e gelince "☠ BOSS AHEAD — heal up and repair before you go in!" yazar.
+- Yerde sarı-siyah uyarı şeridi, "☠ BOSS AHEAD" yazısı ve arenaya doğru yanıp sönen kırmızı oklar var.
+
+--- GÜNCELLEME 10 ---
+- Ekrandaki gereksiz uyarılar kaldırıldı (boss saldırı/faz uyarıları, "Laser charging", "Reinforcements", olay
+  uyarıları, "BOSS AHEAD" vb.). Eşya alma, co-op, kilit açma ve yan görev mesajları duruyor.
+- Boss arenalarının girişine büyük bir BOSS KAPISI eklendi: yaklaşınca açılır, savaş başlayınca kapanır (kırmızı ışıklar).
+- Co-op: biri arenaya girince arkadaşı otomatik olarak arenanın içine ışınlanır, savaş ikinizle başlar.
+- Boss can çubuğu artık giriş animasyonundan (boss adı kartı) sonra, savaş başlayınca çıkar; ad ile çakışmaz.
