@@ -942,7 +942,7 @@ const LVA=[
 const REFC=['basic','twin','triple','penta','hydra','omega','omega','omega'];
 function loadCP(){try{const j=JSON.parse(localStorage.getItem('dd_cp')||'null');if(j&&j.s){CP.s=j.s;CP.cls=j.cls||{};if(!j.v){if(CP.s[50]){CP.s[100]=CP.s[50];delete CP.s[50]}saveCP()}if(j.v==2||!j.v){const o=CP.s,n=[];for(const k in o){const i=+k;if(o[k]!=null)n[i<60?i:i+10]=o[k]}CP.s=n;saveCP()}}}catch(e){}}
 function saveCP(){try{localStorage.setItem('dd_cp',JSON.stringify({v:3,s:CP.s,cls:CP.cls||{}}))}catch(e){}}
-const nextLv=()=>{let i=0;while(i<LV.length-1&&LV[i+1].r!=5&&!LV[i+1].hid&&(CP.s[i]||0)>0)i++;return i};
+const nextLv=()=>{let m=-1;for(let i=0;i<LV.length;i++)if(LV[i].r!=5&&!LV[i].hid&&!LV[i].dev&&(CP.s[i]||0)>0)m=i;let n=m+1;while(n>0&&(n>=LV.length||LV[n].r==5||LV[n].hid||LV[n].dev))n--;return Math.max(0,n)};
 const unlk=i=>LV[i].r==5||(LV[i].hid?(CP.s[109]||0)>0:i<=nextLv());
 function storyMD(){const l=LV[CP.cur];return{...MODS.story,story:1,co:1,sx:20,rl:60,nf:1,bots:0,sh:l.ch?0:l.sh,w:l.w,lvi:CP.cur,lc:l.lc,xp:.35,bal:1,skill:.9,wd:1,ht:1,tint:l.tint||REG[l.r].tint}}
 const humans=()=>T.filter(t=>t.hu&&!t.dead);
@@ -4446,7 +4446,7 @@ const _pathBuild14=pathBuild;pathBuild=function(){const P=_pathBuild14.apply(thi
 /* ---------- 8) class picker: Double Laser in classic modes ---------- */
 
 /* ===== ext15: crash guard, version check for co-op, client map self-repair ===== */
-const BUILDV='20261126021952';let ERRL=[],ERRT=-9999;
+const BUILDV='20261126044457';let ERRL=[],ERRT=-9999;
 function errRep(e,where){try{const m=(e&&e.message)||String(e);console.error('[DD]',where||'',m,e&&e.stack);ERRL.push((where||'')+': '+m);if(ERRL.length>20)ERRL.shift();if(fr-ERRT>900){ERRT=fr;try{toast('⚠ Error caught ('+(where||'game')+'): '+m.slice(0,70))}catch(_){}}}catch(_){}}
 function verBox(other){if(document.getElementById('verbox'))return;const o=document.createElement('div');o.id='verbox';o.style.cssText='position:fixed;inset:0;z-index:95;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center';
  o.innerHTML='<div style="background:#1a0f33;border:2px solid #ffb347;border-radius:14px;padding:18px;max-width:320px;color:#fff;font:600 14px sans-serif;text-align:center">⚠ Game versions do not match.<br><br>Both players must refresh the page to get the newest version.<br><br><button id="verok" style="padding:10px 18px;border-radius:9px;font-weight:800">🔄 Refresh now</button></div>';
@@ -4748,12 +4748,12 @@ const _bossAI21=bossAI;bossAI=function(b){const x0=b.x,y0=b.y,frz=!b.dying&&(b.t
  if(MD&&MD.story&&TZ.some(z=>z.k=='ring'))TZ=TZ.filter(z=>z.k!='ring')};
 const _hitP21=hitP;hitP=function(t,pct,fx,fy){if(MD&&MD.story&&t&&t.hu&&PATH&&PATH.lk&&(CP.cur|0)>=39)pct*=.9;return _hitP21.call(this,t,pct,fx,fy)};
 /* story unlocked up to level 50 */
-function unl50(){try{if(localStorage.getItem('dd_unl50'))return;for(let i=0;i<49;i++)CP.s[i]=Math.max(CP.s[i]||0,1);saveCP();localStorage.setItem('dd_unl50','1')}catch(e){}}
+function unl50(){try{if(localStorage.getItem('dd_unl81'))return;for(let i=0;i<80;i++)CP.s[i]=Math.max(CP.s[i]||0,1);saveCP();localStorage.setItem('dd_unl81','1');localStorage.setItem('dd_unl50','1')}catch(e){}}
 unl50();setTimeout(unl50,300);
-try{if(typeof DACT=='object'&&DACT.reset){const _r21=DACT.reset;DACT.reset=function(){_r21.apply(this,arguments);try{if(CPRESET)localStorage.setItem('dd_unl50','1')}catch(e){}}}}catch(e){}
+try{if(typeof DACT=='object'&&DACT.reset){const _r21=DACT.reset;DACT.reset=function(){_r21.apply(this,arguments);try{if(CPRESET)localStorage.setItem('dd_unl81','1');localStorage.setItem('dd_unl50','1')}catch(e){}}}}catch(e){}
 
 /* ===== ext22: version label, bottom-left, menu only ===== */
-const GAMEV='v1.0';
+const GAMEV='v1.1';
 function verTag(){try{const ov=document.getElementById('ov');if(!ov)return;let e=document.getElementById('vtag');if(!e||e.parentNode!==ov){e=e||document.createElement('div');e.id='vtag';e.textContent=GAMEV;
  e.style.cssText='position:fixed;left:calc(8px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));font:600 11px sans-serif;color:#fff;opacity:.45;pointer-events:none;z-index:6;letter-spacing:.5px';ov.appendChild(e)}}catch(e){}}
 verTag();try{setInterval(verTag,1000)}catch(e){}
